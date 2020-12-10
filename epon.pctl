@@ -1,0 +1,61 @@
+const double T;
+const int C0;
+
+P=? [ F[T,T] q_down=q_down_max ]
+
+R{"queue_size_down"}=? [ I=T ]
+
+R{"total_sleep"}>8 [ C ]
+
+R{"total_listen"}=? [ C<=C0 ]
+
+R{"energy_consumption"}=? [ C<=C0 ]
+
+R{"drops"}=? [ C<=C0 ]
+
+S=? [ q_down/q_down_max>0.50 ]
+
+P=? [ F<=C0 q_down/q_down_max>0.5 ]
+
+P=? [ G q_down<=q_down_max ]
+
+P=? [ F<=C0 finish ]
+
+P=? [ F<=C0 pm=0 ]
+
+P=? [ F<=C0 pm=1 ]
+
+P=? [ F<=C0 pm=2 ]
+
+R{"queue_size_up"}=? [ I=T ]
+
+R{"delay"}=? [ I=T ]
+
+R{"Q_delay"}=? [ I=T ]
+
+R{"W_delay"}=? [ I=T ]
+
+R{"total_arrival"}=? [ C<=100 ]
+
+R{"total_receive"}=? [ C<=100 ]
+
+R{"total_buffer"}=? [ C<=C0 ]
+
+R{"total_trans"}=? [ C<=C0 ]
+
+S=? [ (pm=0)&(q_down=0)&(packets_down=transmitted_packets_down) ]
+
+R{"sleep_requests"}=? [ F packets_down=transmitted_packets_down ]
+
+R{"queue_size_up"}=? [ I=T ]
+
+R{"nack_messages"}=? [ C<=C0 ]
+
+R{"sleep_requests"}=? [ C<=C0 ]
+
+R{"total_active"}=? [ C<=C0 ]
+
+R{"total_sleep"}=? [ C<=C0 ]
+
+R{"ack_messages"}=? [ C<=C0 ]
+
