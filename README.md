@@ -18,6 +18,7 @@ The attacker intervens to the message exchange of the energy-efficient mechanism
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
 
 # Prism Installation
+PRISM is free and open source software. You can download both the tool and its source code for free from the following link.
 <img src="images/prim model checker.png">
 
 # Run the model
