@@ -10,5 +10,5 @@ Otherwise, if the ONU has upstream traffic in its queue, it sends a nack message
 //MITM attack on the message exchange of the energy-efficient mechanism: 
 The attacker intervens to the message exchange of the energy-efficient mechanism, intercepts the OLT's sleep requests and replies to the OLT with a nack message for each requests. Hence, the ONU remains active though its queue is empty.  
 
-//Propertites specification: 
+//Properties specification: 
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
