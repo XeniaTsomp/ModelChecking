@@ -17,8 +17,8 @@ const int q_up_max=60;//30; // 4.5M
 // Packet arrival rate lamda
 // SCALE *10^2
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
-const double arrival_rate_down;//ë_down
-const double arrival_rate_up;//ë_up
+const double arrival_rate_down;//Ã«_down
+const double arrival_rate_up;//Ã«_up
 // Reveive rate of packets (mi = 1)
 // SCALE *10^2 --> 100 packets/msec
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
