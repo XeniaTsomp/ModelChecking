@@ -13,3 +13,4 @@ The attacker intervens to the message exchange of the energy-efficient mechanism
 //Properties specification: 
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
 ![](prim model checker.png)
+<img src="prim model checker.png">
