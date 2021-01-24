@@ -1,6 +1,8 @@
 # Quantitative Model Checking for Assessing theEnergy Impact of a MITM Attack on EPONs
+Introduction
+# Purpose
 
-# Description
+# Methodology
 This is a model checking approach of an Ethernet Passive Optical Network (EPON) under a MITM attack on an energy-efficient mechanism. It is built in Prism model checker as a CTMC model. 
 The modules of the OLT and an ONU along with their queues are modeled to represent the OLT-ONU communication in no attack case senario.
 Then, the module of the attacker is added to represent the MITM attack.
@@ -14,6 +16,13 @@ The attacker intervens to the message exchange of the energy-efficient mechanism
 
 //Properties specification: 
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
-# Prism
+
+# Prism Installation
 <img src="images/prim model checker.png">
+
+# Run the model
+
+# Run the Properties of the model
+
+# Take the quantitative results
 
