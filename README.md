@@ -21,14 +21,14 @@ The PRISM model checker is used for the design and analysis of the proposed EPON
 <summary>Cumulative reward properties of the form R~r [C≤ t] are used to evaluate the impact of the attack on the energy-efficiency mechanism.</summary>
 </details>
 
-## Message exchange of the energy-efficient mechanism: 
+### Message exchange of the energy-efficient mechanism: 
 When the OLT has no traffic in its queue it sends a sleep request to the ONU. If the ONU has no upstrean traffic in its queue, it accepts the sleep request, sends an ack message to the OLT and turns to sleep mode.
 Otherwise, if the ONU has upstream traffic in its queue, it sends a nack message and remains active until a new sleep message is sent by the OLT.
 
-## MITM attack on the message exchange of the energy-efficient mechanism: 
+### MITM attack on the message exchange of the energy-efficient mechanism: 
 The attacker intervens to the message exchange of the energy-efficient mechanism, intercepts the OLT's sleep requests and replies to the OLT with a nack message for each requests. Hence, the ONU remains active though its queue is empty.  
 
-##Properties specification: 
+### Properties specification: 
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
 
 # Prism Installation
