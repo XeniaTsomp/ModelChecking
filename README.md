@@ -50,6 +50,7 @@ Model-> Open model DownUpStreams_Noattack.pm or DownUpStreams_Attack.pm
 <img src="images/prim model checker.png">
 
 ### 3. Run the Properties of the model
+epon.pctl
 
 ### 4. Run the Expiriments
 
