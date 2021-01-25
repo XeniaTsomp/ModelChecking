@@ -38,19 +38,19 @@ A number of properties are implemented to the model to derive the quantitative r
          
          2. Open the CTMC model
          
-         3. Open the properties
+         3. Open the properties file
          
          4. Run expiriments
 
 ### 1. Prism model checker Installation
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
-### 2. Run the CTMC model 
+### 2. Open the CTMC model 
 There two files of the CTMC model in order to run the model 
 To run the CTMC model you have to open the file DownUpStreams_Noattack.pm following the path: Model-> Open model  to take the results of no attack case or open the file DownUpStreams_Attack.pm to take the results of attack case.
 <img src="images/prim model checker.png">
 
-### 3. Run the Properties of the model
+### 3. Open the Properties file
 epon.pctl
 
 ### 4. Run the Expiriments
