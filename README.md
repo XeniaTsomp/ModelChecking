@@ -53,6 +53,9 @@ At this step select the epon.pctl file from the code folder to show the properti
 
 ### 4. Run the Expiriments
 To derive the quantitative results you have to run expiriments by running some properties. 
+
+A number of constants have to be defined according to the results that you want to derive.
+
 To derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run the property P =? [F<=C0 finish] to find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0:2 x 102 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists.  
 
 An example of downstream traffic is presented at the following image.
