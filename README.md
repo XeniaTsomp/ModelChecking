@@ -34,7 +34,7 @@ A number of properties are implemented to the model to derive the quantitative r
 # Run the code
 
 ### Prism Installation
-PRISM is free and open source software. You can download both the tool and its source code for free from the following link.
+PRISM is free and open source software. You can download both the tool and its source code for free from the following link https://www.prismmodelchecker.org/download.php.
 <img src="images/prim model checker.png">
 
 ### Run the CTMC model 
