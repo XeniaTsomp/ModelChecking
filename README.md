@@ -46,7 +46,8 @@ A number of properties are implemented to the model to derive the quantitative r
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
 ### 2. Run the CTMC model 
-Model-> Open model DownUpStreams_Noattack.pm or DownUpStreams_Attack.pm
+There two files of the CTMC model in order to run the model 
+To run the CTMC model you have to open the file DownUpStreams_Noattack.pm following the path: Model-> Open model  to take the results of no attack case or open the file DownUpStreams_Attack.pm to take the results of attack case.
 <img src="images/prim model checker.png">
 
 ### 3. Run the Properties of the model
