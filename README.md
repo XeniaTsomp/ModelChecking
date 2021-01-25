@@ -32,14 +32,17 @@ The attacker intervens to the message exchange of the energy-efficient mechanism
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
 
 # Run the code
-
+ Markup : 1. A numbered list
+              1. A nested numbered list
+              2. Which is numbered
+          2. Which is numbered
 ### Prism model checker Installation
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
-<img src="images/prim model checker.png">
+
 
 ### Run the CTMC model 
-
+<img src="images/prim model checker.png">
 ### Run the Properties of the model
 
 ### Take the quantitative results
