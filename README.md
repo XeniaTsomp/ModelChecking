@@ -45,9 +45,8 @@ A number of properties are implemented to the model to derive the quantitative r
 ### 1. Prism model checker Installation
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
-
-
 ### 2. Run the CTMC model 
+Model-> Open model DownYpstreams_NoAttack.pm
 <img src="images/prim model checker.png">
 
 ### 3. Run the Properties of the model
