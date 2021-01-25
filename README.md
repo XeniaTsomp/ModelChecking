@@ -8,7 +8,10 @@ We use probabilistic model checking to:
   represent the OLT-ONU communication under EPON specifications, as well as, the energy mechanism circumvention.
   quantitatively evaluate the impact of a fake Optical Line Terminal (OLT) attacking an EPON energy-efficiency mechanism using probabilistic model checking.
 
-
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 # Methodology
 
 //Message exchange of the energy-efficient mechanism: 
