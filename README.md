@@ -33,6 +33,7 @@ A number of properties are implemented to the model to derive the quantitative r
 
 # Run the code
  Steps :
+         
          1. Install the Prism model checker
          
          2. Open the CTMC model
@@ -40,6 +41,7 @@ A number of properties are implemented to the model to derive the quantitative r
          3. Open the properties
          
          4. Run expiriments
+
 ### 1. Prism model checker Installation
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
