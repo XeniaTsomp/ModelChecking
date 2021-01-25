@@ -4,9 +4,10 @@ The modules of the OLT and an ONU along with their queues are modeled to represe
 Then, the module of the attacker is added to represent the MITM attack.
 
 # Purpose
-Downstream traffic broadcasting makes the Ethernet Passive Optical Networks (EPON) vulnerable to eavesdropping and consequently to Man in the Middle (MITM) attack. 
-A MITM attack in energy-efficient mechanisms could turn an EPON into a large energy consumer.
-Optical Network Units (ONUs) are the most energy-consuming equipment, responsible for almost 65% of the total EPON power consumption. 
+We use probabilistic model checking to:
+  represent the OLT-ONU communication under EPON specifications, as well as, the energy mechanism circumvention.
+  quantitatively evaluate the impact of a fake Optical Line Terminal (OLT) attacking an EPON energy-efficiency mechanism using probabilistic model checking.
+
 
 # Methodology
 
