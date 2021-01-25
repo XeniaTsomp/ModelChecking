@@ -61,3 +61,4 @@ To derive the proof-of-concept results in downstream traffic for non-attack and 
 An example of downstream traffic is presented at the following image.
 <img src="images/downstream no attack.png">
 # Contribution
+We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
