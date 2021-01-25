@@ -1,6 +1,6 @@
 # Quantitative Model Checking for Assessing theEnergy Impact of a MITM Attack on EPONs
 Introduction
-### Purpose
+# Purpose
 
 # Methodology
 This is a model checking approach of an Ethernet Passive Optical Network (EPON) under a MITM attack on an energy-efficient mechanism. It is built in Prism model checker as a CTMC model. 
