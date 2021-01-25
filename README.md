@@ -15,7 +15,7 @@ We use probabilistic model checking to:
 # Methodology
 The PRISM model checker is used for the design and analysis of the proposed EPONMITM Continuous-Time Markov Chain (CTMC) model.
 <details>
-<summary>rModel checking verifies the property P=? [F≤C0  finish] which provides the probability that all packets have been transmitted and received successfully.</summary>
+<summary>Model checking verifies the property P=? [F≤C0  finish] which provides the probability that all packets have been transmitted and received successfully.</summary>
 </details>
 <details>
 <summary>Cumulative reward properties of the form R~r [C≤ t] are used to evaluate the impact of the attack on the energy-efficiency mechanism.</summary>
