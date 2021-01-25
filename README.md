@@ -4,15 +4,11 @@ The modules of the OLT and an ONU along with their queues are modeled to represe
 Then, the module of the attacker is added to represent the MITM attack.
 
 # Purpose
-We use probabilistic model checking to:
-  
-  
-          
-   <details>
+We use probabilistic model checking to:       
+<details>
            <summary>represent the OLT-ONU communication under EPON specifications, as well as, the energy mechanism circumvention.</summary>
            <summary>quantitatively evaluate the impact of a fake Optical Line Terminal (OLT) attacking an EPON energy-efficiency mechanism using probabilistic model checking.</summary>
-           <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-         </details>
+</details>
          
 # Methodology
 
