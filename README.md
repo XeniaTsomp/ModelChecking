@@ -52,6 +52,8 @@ There are two files in the code folder which correspond to non-attack and attack
 At this step select the epon.pctl file from the code folder to show the properties list. Follow the path "Properties-> Open properties list" to open the selected file.
 
 ### 4. Run the Expiriments
-To derive the quantitative results you have to run some expiriments by running some properties.   
+To derive the quantitative results you have to run expiriments by running some properties. 
+To derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run the property P =? [F<=C0 finish].   
+
 <img src="images/prism.png">
 # Contribution
