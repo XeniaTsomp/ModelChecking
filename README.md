@@ -50,7 +50,8 @@ There are two files in the code folder which correspond to non-attack and attack
 
 ### 3. Open the Properties file
 At this step select the epon.pctl file from the code folder to show the properties list. Follow the path "Properties-> Open properties list" to open the selected file.
-<img src="images/prism.png">
-### 4. Run the Expiriments
 
+### 4. Run the Expiriments
+To derive the quantitative results you have to run some expiriments by running some properties.   
+<img src="images/prism.png">
 # Contribution
