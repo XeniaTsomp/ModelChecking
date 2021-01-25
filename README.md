@@ -43,8 +43,9 @@ PRISM is a free and open source software. You can download the tool for free fro
 
 ### 2. Run the CTMC model 
 <img src="images/prim model checker.png">
+
 ### 3. Run the Properties of the model
 
-### 4. Expiriments
+### 4. Run the Expiriments
 
 # Contribution
