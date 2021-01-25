@@ -32,7 +32,8 @@ The attacker intervens to the message exchange of the energy-efficient mechanism
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
 
 # Run the code
- Steps : 1. Install the Prism model checker
+ Steps :
+         1. Install the Prism model checker
          
          2. Open the CTMC model
          
