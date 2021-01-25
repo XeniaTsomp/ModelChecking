@@ -12,6 +12,12 @@ We use probabilistic model checking to:
               * Nested bullet
                   * Sub-nested bullet etc
           * Bullet list item 2
+          
+Markup : <details>
+           <summary>Title 1</summary>
+           <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+         </details>
+         
 # Methodology
 
 //Message exchange of the energy-efficient mechanism: 
