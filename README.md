@@ -62,7 +62,8 @@ First, open the file of the non-attack case scenario "DownUpStreams_Noattack.pm"
 
 These results are simultateously plotted in a graph by clicking the box of "Create Graph" in the same window to be examined easy from the reader.    
 
-Second, 
+Then you have to open the prism software again and open file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the reader have to take care of is the intervention rate, which the reader has to set it manually at the ONU and OLT module of the model. Hence, if the reader wants to take results for the intervention rate of 0.5, you have to set this value in the lines 195 and 274 at the ONU and Attaker modules, correspondingly. But if you want to take the results for the intervention rate of 0.99 then you have set the 0.01 and 0.99 values in the same lines to take the worst case scenario.        
+
 
 # Contribution
 We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
