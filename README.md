@@ -56,7 +56,10 @@ To derive the quantitative results you have to open the files of the model and r
 
 For example, if you want to derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run expiriments using the property P =? [F<=C0 finish]. 
 
-First, open the file of the non-attack case scenario "DownUpStreams_Noattack.pm" and the properties' file "epon.pctl". To take the quantitative results of the non-attack case scenario you have to use the defined values in Query 1 and find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0:2 x 10^2 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists. An example of the way you can define the constants of model is shown at the following image. <img src="images/downstream no attack.png">
+First, open the file of the non-attack case scenario "DownUpStreams_Noattack.pm" and the properties' file "epon.pctl". To take the quantitative results of the non-attack case scenario you have to use the defined values in Query 1 and find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0:2 x 10^2 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists. An example of the way you can define the constants of model is shown at the following image. 
+
+<img src="images/downstream no attack.png">
+
 These results are simultateously plotted in a graph to be examined easy from the reader.    
 
 Second, 
