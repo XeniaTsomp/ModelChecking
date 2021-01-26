@@ -9,7 +9,7 @@ R{"total_sleep"}>8 [ C ]
 
 R{"total_listen"}=? [ C<=C0 ]
 
-R{"energy_consumption"}=? [ C<=C0 ]
+R{"energy_saving"}=? [ C<=C0 ]
 
 R{"drops"}=? [ C<=C0 ]
 
