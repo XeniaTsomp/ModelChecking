@@ -60,7 +60,7 @@ First, open the file of the non-attack case scenario "DownUpStreams_Noattack.pm"
 
 <img src="images/downstream no attack.png">
 
-These results are simultateously plotted in a graph to be examined easy from the reader.    
+These results are simultateously plotted in a graph by clicking the box of "Create Graph" in the same window to be examined easy from the reader.    
 
 Second, 
 
