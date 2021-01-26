@@ -52,11 +52,11 @@ There are two files in the code folder which correspond to non-attack and attack
 At this step select the epon.pctl file from the code folder to show the properties list. Follow the path "Properties-> Open properties list" to open the selected file.
 
 ### 4. Run the Expiriments
-To derive the quantitative results you have to run expiriments by running some properties. 
+To derive the quantitative results you have to run some expiriments by using some properties. A number of constants have to be defined according to the results that you want to derive.
 
-A number of constants have to be defined according to the results that you want to derive.
+For example, if you want to derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run expiriments using the property P =? [F<=C0 finish]. 
 
-To derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run the property P =? [F<=C0 finish] to find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0:2 x 102 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists.  
+to find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0:2 x 102 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists.  
 
 An example of downstream traffic is presented at the following image.
 <img src="images/downstream no attack.png">
