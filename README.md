@@ -66,7 +66,7 @@ Then you have to open the prism software again and open file of the attack case 
 
 Besides, you can derive the quantitative results of the number of sleep requests and ack messages to calculate the percentage of sleep requests acceptance. You have to run the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0] using the defined values of queries Q2 which considers the realistic scenario of packets’ transmission in both directions; we fix theupstream rate at0.7×10^ 2and vary the downstream one from 0.2×10^2 to 1×10^2 packets/ms.   
 
-Correspondigly, you can measure the energy saving by running the property R{“energy_saving”}=? [C≤C0] using the defined values in query Q4.  
+Correspondigly, you can measure the energy saving by running the property R{“energy_saving”}=? [C≤C0] using the defined values in query Q4 which measures the ONU's energy consumption.   
 
 # Contribution
 We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
