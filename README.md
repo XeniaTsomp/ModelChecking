@@ -54,6 +54,7 @@ Select the epon.pctl file from the code folder to show the properties' list. Fol
 ### 4. Run the Expiriments
 To derive the quantitative results open the files of the model and run expiriments by using some properties. A number of constants have to be defined according to the results that you want to derive.
 
+##### Proof-of-concept results
 For example, if you want to derive the proof-of-concept results in downstream traffic for non-attack and attack case with intervention rate 0.5 and 0.99 you have to run expiriments using the property P =? [F<=C0 finish]. 
 
 First, open the file of the non-attack case scenario "DownUpStreams_Noattack.pm" and the properties' file "epon.pctl". To take the quantitative results of the non-attack case scenario you have to use the defined values in Query 1 and find the probability that 1000 downstream packets will be transmitted by the OLT and received successfully by the ONU within 100 ms when packet arrival rate varies from 0.2 x 10^2 to 1 x 10^2 packets/ms, the service rate is 1 and no upstream traffic exists. The parameters of listening and sleep periods are set at 8ms and 20ms, respectively. An example of the way you can define the constants of model is shown at the following image. 
@@ -64,8 +65,10 @@ These results are simultateously plotted in a graph by clicking the box of "Crea
 
 Then you have to open the prism software again and open file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the reader have to take care of is the intervention rate, which the reader has to set it manually at the ONU and OLT module of the model. Hence, if the reader wants to take results for the intervention rate of 0.5, you have to set this value in the lines 195 and 274 at the ONU and Attaker modules, correspondingly. But if you want to take the results for the intervention rate of 0.99 then you have set the 0.01 and 0.99 values in the same lines to take the worst case scenario.        
 
+##### Percentage of sleep requests acceptance 
 Besides, you can derive the quantitative results of the number of sleep requests and ack messages to calculate the percentage of sleep requests acceptance. You have to run the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0] using the defined values of queries Q2 which considers the realistic scenario of packets’ transmission in both directions; we fix theupstream rate at0.7×10^ 2and vary the downstream one from 0.2×10^2 to 1×10^2 packets/ms.   
 
+##### Percentage of energy saving 
 Correspondigly, you can measure the energy saving by running the property R{“energy_saving”}=? [C≤C0] using the defined values in query Q4 which measures the ONU's energy consumption.   
 
 # Contribution
