@@ -70,7 +70,7 @@ For the non-attack scenario, open the models' file "DownUpStreams_Noattack.pm" a
 
 According to the aformentioned example, the reader has to take the results that are related to the query: " Which is the expected number of ack response messages sent by the ONU" running the experiment for the property R{“ack”}=? [C≤C0] and using the above values.   
 
-Correspondigly, the reader can measure the energy saving by running experiments using the property R{“energy_saving”}=? [C≤C0]. As mentioned before, the reader finds the ONU's energy consumption and the expected energy saving using the defined values of the query "which is the expected energy saving.  
+Correspondigly, the reader can measure the energy consumption and energy saving by running experiments that are related to the query: " Which is the expected energy saving" for the property R{“energy saving”}=? [C≤C0] and using the above values. 
 
 For the attack case scenario open the prism software again and open the models' file "DownUpStreams_Attack.pm" to run the same experiments as described before, but taking care of the definition of the intervention rate value as the reader did at proof-of-concept results. 
 
