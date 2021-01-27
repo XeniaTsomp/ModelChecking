@@ -69,4 +69,4 @@ Besides, you can derive the quantitative results of the number of sleep requests
 Correspondigly, you can measure the energy saving by running the property R{“energy_saving”}=? [C≤C0] using the defined values in query Q4 which measures the ONU's energy consumption.   
 
 # Contribution
-We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
+Anyone is welcome to use the source code. We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
