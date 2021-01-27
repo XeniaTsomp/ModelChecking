@@ -61,7 +61,7 @@ To take the quantitative results of the non-attack case scenario open the models
 
 <img src="images/down.png" width=350>
 
-Then, open the prism software again and open the models' file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the user has to take care of is the intervention rate, which the reader has to set it up manually at the ONU module of the models' code. Hence, if the user wants to take results for the intervention rate of 0.5 where the attacker intercepts the half number of sleep requests, the user has to set this value at the constant rfk and in line 196 of the code at the ONU module. But if the user wants to take the results for the worst-case scenario where the intervention rate is 0.99 and the attacker intercepts almost the total number of sleep requests then, the user has to set the value 0.99 at the constant and the value 0.01 at the ONU module in line 196.       
+Then, open the prism software again and open the models' file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the user has to take care of is the intervention rate, which the user has to set it up manually at the ONU module of the models' code. Hence, if the user wants to take results for the intervention rate of 0.5 where the attacker intercepts the half number of sleep requests, the user has to set this value at the constant rfk and in line 196 of the code at the ONU module. But if the user wants to take the results for the worst-case scenario where the intervention rate is 0.99 and the attacker intercepts almost the total number of sleep requests then, the user has to set the value 0.99 at the constant and the value 0.01 at the ONU module in line 196.       
 
 ##### Sleep requests, ack messages and energy saving
 To calculate the percentage of sleep requests acceptance, the number of sleep requests and ack messages have to be derived using the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
@@ -72,7 +72,7 @@ According to the aformentioned example, the user has to take the results that ar
 
 Correspondigly, the user can measure the energy saving by running experiments that are related to the query: " Which is the expected energy saving" for the property R{“energy saving”}=? [C≤C0] and using the values of the above example where 2000 packets are transmitted in both directions, downstream packet arrival rate varies from 0.2 x 10^2 to 1 x 10^2 packets/ms, upstream arrival rate is fixed at 0.7×10^2 and the service rate is 1 and listening and sleep periods are set at 8ms and 20ms, respectively. 
 
-For the attack case scenario open the prism software again and open the models' file "DownUpStreams_Attack.pm" to run the same experiments as described before, but taking care of the definition of the intervention rate value as the reader did at proof-of-concept results. 
+For the attack case scenario open the prism software again and open the models' file "DownUpStreams_Attack.pm" to run the same experiments as described before, but taking care of the definition of the intervention rate value as the user did at proof-of-concept results. 
 
 # Contribution
 Anyone is welcome to use the source code. We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
