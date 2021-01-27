@@ -26,7 +26,7 @@ When the OLT has no traffic in its queue it sends a sleep request to the ONU. If
 Otherwise, if the ONU has upstream traffic in its queue, it sends a nack message and remains active until a new sleep message is sent by the OLT.
 
 ### MITM attack on the message exchange of the energy-efficient mechanism: 
-The attacker intervens to the message exchange of the energy-efficient mechanism, intercepts the OLT's sleep requests and replies to the OLT with a nack message for each requests. Hence, the ONU remains active though its queue is empty.  
+The attacker intervens to the message exchange of the energy-efficient mechanism, intercepts the OLT's sleep requests and replies to the OLT with a nack message for each request. Hence, the ONU remains active though its queue is empty.  
 
 ### Properties specification: 
 A number of properties are implemented to the model to derive the quantitative results in the epon.pctl file.  
@@ -46,10 +46,10 @@ A number of properties are implemented to the model to derive the quantitative r
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
 
 ### 2. Open the CTMC model
-There are two files in the code folder which correspond to non-attack and attack cases of the CTMC model. To run the CTMC model, you have to select from the code folder the file "DownUpStreams_Noattack.pm" to take the results of non-attack case scenario or the file "DownUpStreams_Attack.pm" to take the results of the attack case scenario. Follow the path "Model-> Open model" to open the selected file.
+There are two files in the code folder which correspond to non-attack and attack cases of the CTMC model. To run the CTMC model, you have to select from the code folder the file "DownUpStreams_Noattack.pm" to take the results of non-attack case scenario or the file "DownUpStreams_Attack.pm" to take the results of the attack case scenario. Follow the path "Model-> Open model" from the Prism menu bar to open the selected file.
 
-### 3. Open the Properties file
-At this step select the epon.pctl file from the code folder to show the properties list. Follow the path "Properties-> Open properties list" to open the selected file.
+### 3. Open the Properties' file
+Select the epon.pctl file from the code folder to show the properties' list. Follow the path "Properties-> Open properties list" from the Prism menu bar to open the selected file.
 
 ### 4. Run the Expiriments
 To derive the quantitative results you have to open the files of the model and run some expiriments by using some properties. A number of constants have to be defined according to the results that you want to derive.
