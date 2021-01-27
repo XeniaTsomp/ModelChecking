@@ -35,6 +35,7 @@ const double rate_s2s = 1/sleep_time_cycle; // msec
 const double rate_l2l = 1/listening_time_cycle; // msec
 const double rate_l2s = pow(10,3)/2.88 ; // microsec
 const double rate_s2a = 1/2 ;		// msec
+const double rfk;//intervention rate of fake OLT
 
 //ONU upstream
 const int transmitted_packets_up;
@@ -271,7 +272,7 @@ module ATTACKER
 	[sleep_request] ps=1 & r=0 & s=0 ->(m'=0)& (ps'=ps);
 
 	//Attacker receives request
-	[request_received_by_attacker] ps=1 & r=1 & s=0 & m=0 ->0.5:(m'=1)&(ps'=ps); 
+	[request_received_by_attacker] ps=1 & r=1 & s=0 & m=0 ->rfk:(m'=1)&(ps'=ps); 
 
 	//Attacker sents nack
 	[nack_sent_by_attacker] ps=1 & r=2 & s=0 & m=1->(m'=1)&(ps'=ps);
