@@ -13,7 +13,7 @@ We use probabilistic model checking to:
 </details>
          
 # Methodology
-The PRISM model checker is used for the design and analysis of the proposed EPON MITM Continuous-Time Markov Chain (CTMC) model.
+The PRISM model checker is used for the design and analysis of the proposed EPON_MITM Continuous-Time Markov Chain (CTMC) model.
 <details>
 <summary>Model checking verifies the property P=? [F≤C0  finish] which provides the probability that all packets have been transmitted and received successfully.</summary>
 </details>
