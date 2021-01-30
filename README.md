@@ -35,6 +35,10 @@ A number of properties are implemented to the model to derive the quantitative r
 
 ### Model statistics: 
 
+The table below shows the statistics for the CTMC model we have built for ....
+
+
+
 ### The PRISM source code: 
 By way of example, the PRISM source code for the attack case scenario. 
 <details>
