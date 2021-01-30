@@ -71,6 +71,9 @@ The combination of the plotted results into the same graph emerges the differenc
 The user can right click on the plotted area to export the graph and right click on the experiment to view the graphs' quantitative results.  
 
 ##### Sleep requests, ack messages and energy saving
+
+Similarly, the user can take the results for the number of sleep requests, ack messages and energy saving. 
+
 To calculate the percentage of sleep requests acceptance, the number of sleep requests and ack messages have to be derived using the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
 
 For the non-attack scenario, open the models' file "DownUpStreams_Noattack.pm" and the properties' file "epon.pctl". Select the "Properties" tab and right click on the specific property R{“sleep”}=? [C≤C0] from the presented list. Select the choice "New experiment" to run the property. A new window opens where the models' constants have to be defined. Use the defined values of the following query: "Which is the expected number of sleep request messages sent by the OLT within 100 ms when 2000 packets are transmitted in both directions, downstream packet arrival rate varies from 0.2 x 10^2 to 1 x 10^2 packets/ms, upstream arrival rate is fixed at 0.7×10^2 and the service rate is 1? ". The constants of listening and sleep periods are set at 8ms and 20ms, respectively. The results can be calculated and simultaneously plotted in a graph by clicking the box of "Create Graph" at the same window in order to be examined easily by the user.
