@@ -44,7 +44,7 @@ The table below shows the statistics for the CTMC model which include:
 <img src="images/table.png" width=700>
 
 ### The PRISM source code: 
-By way of example, the PRISM source code for the attack case scenario. 
+By way of example, the PRISM source code for the attack case scenario. Expand the "Attack Code" bullet to observe the code.
 <details>
   <summary>
    Attack Code
