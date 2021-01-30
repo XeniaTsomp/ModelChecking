@@ -40,12 +40,7 @@ A number of properties are implemented to the model to derive the quantitative r
   <summary>
     summary
   </summary>
-  details
-</details>
-
-```
-
-// Ethernet Passive Optical Network - EPON
+  // Ethernet Passive Optical Network - EPON
 // OLT - Optical Line Terminal
 // ONU - Optical Network Unit
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
@@ -304,7 +299,6 @@ module ONU
 
 endmodule
 
-
 module ATTACKER
 	//Attackers'states
 	//0:not present, 1:present
@@ -432,6 +426,10 @@ endrewards
 rewards "drops"
 	[drop_down] true : 1;
 endrewards
+</details>
+
+```
+
 
 ```
 # Run the code
