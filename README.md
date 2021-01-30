@@ -35,7 +35,8 @@ A number of properties are implemented to the model to derive the quantitative r
 
 ### Model statistics: 
 
-### The PRISM source code for attack case scenario: 
+### The PRISM source code: 
+By way of example, the PRISM source code for the attack case scenario. 
 <details>
   <summary>
    Attack Code
