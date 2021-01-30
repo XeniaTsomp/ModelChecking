@@ -7,6 +7,8 @@ Then, the module of the attacker is added to represent the MITM attack.
 
 # Purpose
 We use probabilistic model checking to:       
+* represent
+
 <details>
            <summary>represent the OLT-ONU communication under EPON specifications, as well as, the energy mechanism circumvention.</summary>
 </details> 
