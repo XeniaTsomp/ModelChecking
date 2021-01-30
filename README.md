@@ -63,6 +63,8 @@ To take the quantitative results of the non-attack case scenario open the models
 
 Then, open the prism software again and open the models' file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the user has to take care of is the intervention rate, which the user has to set it up manually at the ONU module of the models' code. Hence, if the user wants to take results for the intervention rate of 0.5 where the attacker intercepts the half number of sleep requests, the user has to set this value at the constant rfk and in line 196 of the code at the ONU module. But if the user wants to take the results for the worst-case scenario where the intervention rate is 0.99 and the attacker intercepts almost the total number of sleep requests then, the user has to set the value 0.99 at the constant and the value 0.01 at the ONU module in line 196.       
 
+<img src="images/attack.png" width=480>
+
 ##### Sleep requests, ack messages and energy saving
 To calculate the percentage of sleep requests acceptance, the number of sleep requests and ack messages have to be derived using the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
 
