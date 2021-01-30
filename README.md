@@ -29,6 +29,7 @@ A number of properties are implemented to the model to derive the quantitative r
 
 The table below shows the statistics for the CTMC model which include: 
 * the number of states and transitions in the CTMC representing the model;
+* the time needed to solve the model.
 
 <img src="images/table.png" width=700>
 
