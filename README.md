@@ -35,23 +35,32 @@ A number of properties are implemented to the model to derive the quantitative r
 
 ### Model statistics: 
 
-### The PRISM source code for non attack and attack case scenario: 
+### The PRISM source code for attack case scenario: 
 <details>
   <summary>
    Attack Code
   </summary>
 // Ethernet Passive Optical Network - EPON
+
 // OLT - Optical Line Terminal
+
 // ONU - Optical Network Unit
+
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
+
 // Implementation with queue as a module
 
 	ctmc
 // Packet arrival rate lamda
+
 // SCALE *10^2
+
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
+
 // Model will finish when the OLT and the ONU send a number of transmitted_packets
+
 // scale *10^2
+
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
 
 	const int transmitted_packets_down;
@@ -64,8 +73,11 @@ A number of properties are implemented to the model to derive the quantitative r
 	const double arrival_rate_down;//ë_down
 	const double arrival_rate_up;//ë_up
 // Reveive rate of packets (mi = 1)
+
 // SCALE *10^2 --> 100 packets/msec
+
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
+
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
 
 	const double receive_rate_down;
@@ -93,9 +105,9 @@ A number of properties are implemented to the model to derive the quantitative r
 	
 	const int transmitted_packets_up;
 
-// Formula finish represents the final state of the model
-// Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
-// and the ONU will have send transmitted packets and OLT will have received all packets
+	// Formula finish represents the final state of the model
+	// Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
+	// and the ONU will have send transmitted packets and OLT will have received all packets
 
 	formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
 
