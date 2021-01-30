@@ -51,41 +51,35 @@ A number of properties are implemented to the model to derive the quantitative r
 // Implementation with queue as a module
 
 ctmc
-
 // Packet arrival rate lamda
-
 // SCALE *10^2
-
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
-
 // Model will finish when the OLT and the ONU send a number of transmitted_packets
-
 // scale *10^2
-
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
 
 const int transmitted_packets_down;
-
 // Maximum OLT queue size
-
 const int q_down_max=60;
-
 // Maximum ONU queue size
-
 const int q_up_max=60;
-
 const double arrival_rate_down;//ë_down
-
 const double arrival_rate_up;//ë_up
 // Reveive rate of packets (mi = 1)
+
 // SCALE *10^2 --> 100 packets/msec
+
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
+
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
+
 const double receive_rate_down;
 const double receive_rate_up;
+
 //constants for cycles 
 const int y=1;
 const int x=1;
+
 //Tsleep and Tlisten
 const double sleep_time_cycle; // 20 msec
 const double listening_time_cycle; //8 msec
