@@ -38,26 +38,44 @@ A number of properties are implemented to the model to derive the quantitative r
 ### The PRISM source code for non attack and attack case scenario: 
 <details>
   <summary>
-    summary
+    Code
   </summary>
 // Ethernet Passive Optical Network - EPON
+
 // OLT - Optical Line Terminal
+
 // ONU - Optical Network Unit
+
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
+
 // Implementation with queue as a module
+
 ctmc
+
 // Packet arrival rate lamda
+
 // SCALE *10^2
+
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
+
 // Model will finish when the OLT and the ONU send a number of transmitted_packets
+
 // scale *10^2
+
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
+
 const int transmitted_packets_down;
+
 // Maximum OLT queue size
+
 const int q_down_max=60;
+
 // Maximum ONU queue size
+
 const int q_up_max=60;
+
 const double arrival_rate_down;//ë_down
+
 const double arrival_rate_up;//ë_up
 // Reveive rate of packets (mi = 1)
 // SCALE *10^2 --> 100 packets/msec
