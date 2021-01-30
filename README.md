@@ -67,7 +67,7 @@ An example of the plotted graph when the intervention rate is defined at 0.50 is
 
 <img src="images/attack.png" width=480>
 
-The combination of the plotted results into the same graph emerges the difference between the non-attack and attack case scenario.
+If the user combines the plotted results into the same graph, then emerges the difference between the non-attack and attack case scenario.
 The user can right click on the plotted area to export the graph and right click on the experiment to view the graphs' quantitative results.  
 
 ##### Sleep requests, ack messages and energy saving
