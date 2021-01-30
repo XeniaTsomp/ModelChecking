@@ -38,16 +38,12 @@ A number of properties are implemented to the model to derive the quantitative r
 ### The PRISM source code for non attack and attack case scenario: 
 <details>
   <summary>
-    Code
+   Attack Code
   </summary>
 // Ethernet Passive Optical Network - EPON
-
 // OLT - Optical Line Terminal
-
 // ONU - Optical Network Unit
-
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
-
 // Implementation with queue as a module
 
 ctmc
