@@ -40,12 +40,18 @@ A number of properties are implemented to the model to derive the quantitative r
   <summary>
     summary
   </summary>
-  // Ethernet Passive Optical Network - EPON
+// Ethernet Passive Optical Network - EPON
+
 // OLT - Optical Line Terminal
+
 // ONU - Optical Network Unit
+
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
+
 // Implementation with queue as a module
+
 ctmc
+
 // Packet arrival rate lamda
 // SCALE *10^2
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
