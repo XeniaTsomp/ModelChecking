@@ -62,7 +62,7 @@ To take the quantitative results of the non-attack case scenario open the models
 <img src="images/down.png" width=350> <img src="images/noattack.png" width=480>
 
 Then, run the prism software again and open the models' file of the attack case scenario "DownUpStreams_Attack.pm" to run the same experiment as described before. The only thing that the user has to take care of is the intervention rate, which the user has to set it up manually at the ONU module of the models' code. Hence, if the user wants to take results for the intervention rate of 0.5 where the attacker intercepts the half number of sleep requests, the user has to set this value at the constant rfk and in line 196 of the code at the ONU module. But if the user wants to take the results for the worst-case scenario where the intervention rate is 0.99 and the attacker intercepts almost the total number of sleep requests then, the user has to set the value 0.99 at the constant and the value 0.01 at the ONU module in line 196.       
-Line196 :	[request_received_by_ONU](pm=2) & (r=1)->0.5: (s'=s) & (pm'=pm); //ONU receives request if it is in active power mode and a sleep request has been sent
+Code :	[request_received_by_ONU](pm=2) & (r=1)->0.5: (s'=s) & (pm'=pm); //ONU receives request if it is in active power mode and a sleep request has been sent
   
 An example of the plotted graph when the intervention rate is defined at 0.50 is shown at the following image.
 
