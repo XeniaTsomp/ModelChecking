@@ -35,7 +35,11 @@ A number of properties are implemented to the model to derive the quantitative r
 
 ### Model statistics: 
 
-The table below shows the statistics for the CTMC model we have built for ....
+The table below shows the statistics for the CTMC model which include: 
+<details>
+<summary>the number of states and transitions in the CTMC representing the model;
+</summary>
+</details>
 
 <img src="images/table.png" width=700>
 
