@@ -112,7 +112,9 @@ A number of properties are implemented to the model to derive the quantitative r
 	formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
 
 // The OLT has a queue/ONU where ONU's packets are arrived
+
 // With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
+
 // When an ONU sleeps, its downstream traffic is bufferd by the OLT and its upstream traffic is bufferd by the ONU. Then ONU turns to active mode and receives its packets.
 
 	module QUEUE_DOWN
@@ -138,7 +140,9 @@ A number of properties are implemented to the model to derive the quantitative r
 	endmodule
 
 // The ONU has a queue where users' packets are arrived
+
 // With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
+
 // When a ONU sleeps its upstream traffic is bufferd by the ONU and then packets dropped
 
 	module QUEUE_UP
@@ -163,9 +167,13 @@ A number of properties are implemented to the model to derive the quantitative r
 	endmodule
 
 // OLT - Optical Line Terminal
+
 // Broadcasts the downstream traffic to all ONUs
+
 //Initially, ONU is in active power mode. Packets which arrive in OLT's queue and received by ONU.
+
 //Then the OLT sends sleep requests when there are no packets in its queue and ONU is in active mode.
+
 //After that, the OLT buffers the packets that arrive to its queue. 
 
 	module OLT
@@ -229,19 +237,28 @@ A number of properties are implemented to the model to derive the quantitative r
 	endmodule
 
 // ONU - Optical Network Unit
+
 // Obtain downstream and upstream packets destined to itself
+
 // The ONU has 3 power modes:listen, sleep and active
+
 //ONU replies to a sleep request with ack message when its queue is empty, else replies with nack message.
+
 //When ONU is in active mode, packets arrive to its queue and then received by OLT if no ack message sent to OLT.   
-//When ONU is in listen mode, packets arrive to its queue, ONU turns to active mode and sends them to OLT, OLT receives packets and ONU turns to listen mode.   
+
+//When ONU is in listen mode, packets arrive to its queue, ONU turns to active mode and sends them to OLT, OLT receives packets and ONU turns to 
+listen mode.   
+
 //When ONU is in sleep mode, packets are buffered in its queue.
+
 //ONU turns to listen mode in ns, so the time that is spent is negible.   
 module ONU
-//ONU states 
-//0:sleep state, 1:listen state, 2:active
-// Model begins with ONU in active mode
+
+	//ONU states 
+	//0:sleep state, 1:listen state, 2:active
+	// Model begins with ONU in active mode
+
 	//states of ONU
-	
 	pm:[0..2] init 1;
 
 	// sleep cycles sc: 0 .. y
@@ -339,6 +356,7 @@ module ONU
 	//0:not send message, 1:send message
 	m:[0..1]init 0;
 //Attack	
+	
 	//OLT sents sleep request 
 	[sleep_request] ps=1 & r=0 & s=0 ->(m'=0)& (ps'=ps);
 	//Attacker receives request
@@ -359,23 +377,23 @@ module ONU
 //calculate the expected number of sleep requests
 
 	rewards "sleep_requests"
-	[sleep_request] true:1;
+		[sleep_request] true:1;
 	endrewards
 
 //calculate the expected number of nack messages
 	
 	rewards "nack_messages"
-	[nack_sent_by_ONU] true:1;
+		[nack_sent_by_ONU] true:1;
 	endrewards
 //calculate the expected number of ack messages
 	
 	rewards "ack_messages"
-	[ack_sent] true:1;
+		[ack_sent] true:1;
 	endrewards
 //the expected size of queue within C0 time units of operation
 	
 	rewards "queue_size_up"
-	true : q_up;
+		true : q_up;
 	endrewards
 
 // Reward structures
@@ -383,54 +401,54 @@ module ONU
 //the expected size of queue within C0 time units of operation
 
 	rewards "queue_size_down"
-	true : q_down;
+		true : q_down;
 	endrewards
 
 	rewards "Q_delay"
-	pm=2: q_down/arrival_rate_down;
+		pm=2: q_down/arrival_rate_down;
 	endrewards
 
 	rewards "W_delay"
-	pm=0: sleep_time_cycle/2;
+		pm=0: sleep_time_cycle/2;
 	endrewards
 
 	rewards "delay"
-	pm=2: q_down/arrival_rate_down; // http://www.cs.toronto.edu/~marbach/COURSES/CSC358_S14/delay.pdf, queuing and transmission delay
-	pm=0: sleep_time_cycle/2;
+		pm=2: q_down/arrival_rate_down; // http://www.cs.toronto.edu/~marbach/COURSES/CSC358_S14/delay.pdf, queuing and transmission delay
+		pm=0: sleep_time_cycle/2;
 	endrewards
 
 	rewards "allstates"
-    	true : 1;
+    		true : 1;
 	endrewards
 
 	rewards "queue_size"
-  	[arrive] true : 1;
+  		[arrive] true : 1;
 	endrewards
 
 //the expected number of sleep cycles within C0 time units of operation
 	
 	rewards "total_sleep"
-	[county] true: 1/rate_s2s;
-	[buffer_down] true: 1/arrival_rate;
-	[buffer_up] true: 1/arrival_rate;
-	//pm=0: 1;
+		[county] true: 1/rate_s2s;
+		[buffer_down] true: 1/arrival_rate;
+		[buffer_up] true: 1/arrival_rate;
+		//pm=0: 1;
 	endrewards
 
 //the expected number of listening cycles within C0 time units of operation
 	
 	rewards "total_listen"
-	[countx] true: 1/rate_l2l;
-	//pm=1: 1;
+		[countx] true: 1/rate_l2l;
+		//pm=1: 1;
 	endrewards
 
 //the expected number of active cycles within C0 time units of operation
 
 	rewards "total_active"
-	//pm=2: 1;
-	[arrive_down] true: 1/arrival_rate_down;
-	[arrive_up] true: 1/arrival_rate_up;
-	[received_by_ONU] true: 1/receive_rate_down;
-	[received_by_OLT] true: 1/receive_rate_up;
+		//pm=2: 1;
+		[arrive_down] true: 1/arrival_rate_down;
+		[arrive_up] true: 1/arrival_rate_up;
+		[received_by_ONU] true: 1/receive_rate_down;
+		[received_by_OLT] true: 1/receive_rate_up;
 	endrewards
 
 //the expected number of active cycles within C0 time units of operation
