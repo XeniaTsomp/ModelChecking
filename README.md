@@ -67,6 +67,8 @@ An example of the plotted graph when the intervention rate is defined at 0.50 is
 
 <img src="images/attack.png" width=480>
 
+The combination of the plotted results into the same graph emerges the difference between the non-attack and attack case scenario.
+
 ##### Sleep requests, ack messages and energy saving
 To calculate the percentage of sleep requests acceptance, the number of sleep requests and ack messages have to be derived using the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
 
