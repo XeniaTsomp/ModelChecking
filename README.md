@@ -46,7 +46,7 @@ A number of properties are implemented to the model to derive the quantitative r
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
 // Implementation with queue as a module
 
-ctmc
+	ctmc
 // Packet arrival rate lamda
 // SCALE *10^2
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
@@ -54,51 +54,56 @@ ctmc
 // scale *10^2
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
 
-const int transmitted_packets_down;
+	const int transmitted_packets_down;
 // Maximum OLT queue size
-const int q_down_max=60;
+
+	const int q_down_max=60;
 // Maximum ONU queue size
-const int q_up_max=60;
-const double arrival_rate_down;//ë_down
-const double arrival_rate_up;//ë_up
+
+	const int q_up_max=60;
+	const double arrival_rate_down;//ë_down
+	const double arrival_rate_up;//ë_up
 // Reveive rate of packets (mi = 1)
-
 // SCALE *10^2 --> 100 packets/msec
-
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
-
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
 
-const double receive_rate_down;
-const double receive_rate_up;
+	const double receive_rate_down;
+	const double receive_rate_up;
 
 //constants for cycles 
-const int y=1;
-const int x=1;
+	
+	const int y=1;
+	const int x=1;
 
 //Tsleep and Tlisten
-const double sleep_time_cycle; // 20 msec
-const double listening_time_cycle; //8 msec
+
+	const double sleep_time_cycle; // 20 msec
+	const double listening_time_cycle; //8 msec
 // TRansition rates
-const double rate_s2l = 1/2 ;		// msec
-const double rate_s2s = 1/sleep_time_cycle; // msec
-const double rate_l2l = 1/listening_time_cycle; // msec
-const double rate_l2s = pow(10,3)/2.88 ; // microsec
-const double rate_s2a = 1/2 ;		// msec
-const double rfk;//intervention rate of fake OLT
+
+	const double rate_s2l = 1/2 ;		// msec
+	const double rate_s2s = 1/sleep_time_cycle; // msec
+	const double rate_l2l = 1/listening_time_cycle; // msec
+	const double rate_l2s = pow(10,3)/2.88 ; // microsec
+	const double rate_s2a = 1/2 ;		// msec
+	const double rfk;//intervention rate of fake OLT
 
 //ONU upstream
-const int transmitted_packets_up;
+	
+	const int transmitted_packets_up;
 
 // Formula finish represents the final state of the model
 // Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
 // and the ONU will have send transmitted packets and OLT will have received all packets
-formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
+
+	formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
 
 // The OLT has a queue/ONU where ONU's packets are arrived
 // With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
 // When an ONU sleeps, its downstream traffic is bufferd by the OLT and its upstream traffic is bufferd by the ONU. Then ONU turns to active mode and receives its packets.
-module QUEUE_DOWN
+
+	module QUEUE_DOWN
 
 	// q = number of packets currently in queue
 	q_down : [0..q_down_max] init 0;
@@ -118,12 +123,13 @@ module QUEUE_DOWN
 	
 	// [] finish -> true;
 
-endmodule
+	endmodule
 
 // The ONU has a queue where users' packets are arrived
 // With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
 // When a ONU sleeps its upstream traffic is bufferd by the ONU and then packets dropped
-module QUEUE_UP
+
+	module QUEUE_UP
 
 	// n = number of frames currently in queue
 	q_up : [0..q_up_max] init 0;
@@ -142,14 +148,15 @@ module QUEUE_UP
 
 	// [] finish -> true;
 
-endmodule
+	endmodule
 
 // OLT - Optical Line Terminal
 // Broadcasts the downstream traffic to all ONUs
 //Initially, ONU is in active power mode. Packets which arrive in OLT's queue and received by ONU.
 //Then the OLT sends sleep requests when there are no packets in its queue and ONU is in active mode.
 //After that, the OLT buffers the packets that arrive to its queue. 
-module OLT
+
+	module OLT
 
 	// Count the number of transmitted packets 
 	packets_down: [-1..transmitted_packets_down] init 0;
@@ -160,16 +167,19 @@ module OLT
 	//counter of sleep requests
 	sleep_counter:[-1..transmitted_packets_down]init 0;
 
-//energy-aware mechanism message exchange
+	//energy-aware mechanism message exchange
 
 	//OLT sends sleep request. If the OLT's queue is empty, ONU is in active power mode, no sleep request sent and the number of downstream packets is less 
 	//than the transimitted downstream packets, then OLT turns to state r=1 which depicts that a sleep request has been sent. 
+	
 	[sleep_request](q_down=0) & (pm=2) & (r=0) & packets_down<transmitted_packets_down  -> (r'=1);
 
 	//ONU receives request. If ONU is in active power mode and a sleep request has been sent, then OLT turns to state r=2 which depicts that the sleep request has been received.
+	
 	[request_received_by_ONU](pm=2) & (r=1) -> (r'=2);
 	
 	//Attacker receives request
+	
 	[request_received_by_attacker](ps=1)&(r=1)&(s=0) -> (r'=2);
 
 	//ONU sends ack. If ONU is in active power mode and a sleep request has been received then ONU sents an ack message. The OLT stays in the same state, r=2
@@ -204,7 +214,7 @@ module OLT
 	[received_by_OLT] pm=2 -> receive_rate_up : (r'=r);
 	//[] finish -> true;
 
-endmodule
+	endmodule
 
 // ONU - Optical Network Unit
 // Obtain downstream and upstream packets destined to itself
@@ -219,6 +229,7 @@ module ONU
 //0:sleep state, 1:listen state, 2:active
 // Model begins with ONU in active mode
 	//states of ONU
+	
 	pm:[0..2] init 1;
 
 	// sleep cycles sc: 0 .. y
@@ -236,7 +247,9 @@ module ONU
 
 	//0: ack not sent, 1: ack or nack sent,2:ack received
 	s:[0..2] init 0;
+
 //energy-aware mechanism message exchange
+	
 	//OLT sends sleep request if ONU is in active power mode and no sleep request has been sent. 
 	[sleep_request](pm=2) & (r=0) -> (s'=0) & (pm'=pm);
 	//ONU receives request if it is in active power mode and a sleep request has been sent
@@ -305,9 +318,9 @@ module ONU
 	// Packet drop at ONU if queue is full --> retain the queue size and mode
 	[drop_up] packets_up<min(packets_up+1,transmitted_packets_up) -> 1 : (packets_up'=min(packets_up+1,transmitted_packets_up));
 
-endmodule
+	endmodule
 
-module ATTACKER
+	module ATTACKER
 	//Attackers'states
 	//0:not present, 1:present
 	ps:[0..1] init 1;
@@ -324,7 +337,7 @@ module ATTACKER
 
 	//Attacker becomes not present
 	[present2not_present] ps=1 & q_down=0 & q_up=0 & packets_down=transmitted_packets_down & packets_up=transmitted_packets_up->(ps'=0);
-endmodule
+	endmodule
 
 //-----------------------------------------------------
 
@@ -332,108 +345,116 @@ endmodule
 //----------------My rewards-------------------------//
 
 //calculate the expected number of sleep requests
-rewards "sleep_requests"
+
+	rewards "sleep_requests"
 	[sleep_request] true:1;
-endrewards
+	endrewards
+
 //calculate the expected number of nack messages
-rewards "nack_messages"
+	
+	rewards "nack_messages"
 	[nack_sent_by_ONU] true:1;
-endrewards
+	endrewards
 //calculate the expected number of ack messages
-rewards "ack_messages"
+	
+	rewards "ack_messages"
 	[ack_sent] true:1;
-endrewards
+	endrewards
 //the expected size of queue within C0 time units of operation
-rewards "queue_size_up"
+	
+	rewards "queue_size_up"
 	true : q_up;
-endrewards
+	endrewards
 
 // Reward structures
 
 //the expected size of queue within C0 time units of operation
-rewards "queue_size_down"
+
+	rewards "queue_size_down"
 	true : q_down;
-endrewards
+	endrewards
 
-rewards "Q_delay"
+	rewards "Q_delay"
 	pm=2: q_down/arrival_rate_down;
-endrewards
+	endrewards
 
-rewards "W_delay"
+	rewards "W_delay"
 	pm=0: sleep_time_cycle/2;
-endrewards
+	endrewards
 
-rewards "delay"
+	rewards "delay"
 	pm=2: q_down/arrival_rate_down; // http://www.cs.toronto.edu/~marbach/COURSES/CSC358_S14/delay.pdf, queuing and transmission delay
 	pm=0: sleep_time_cycle/2;
-endrewards
+	endrewards
 
-rewards "allstates"
-    true : 1;
-endrewards
+	rewards "allstates"
+    	true : 1;
+	endrewards
 
-//rewards "queue_size"
-  //  [arrive] true : 1;
-//endrewards
+	rewards "queue_size"
+  	[arrive] true : 1;
+	endrewards
 
 //the expected number of sleep cycles within C0 time units of operation
-rewards "total_sleep"
+	
+	rewards "total_sleep"
 	[county] true: 1/rate_s2s;
-	//[buffer_down] true: 1/arrival_rate;
-	//[buffer_up] true: 1/arrival_rate;
+	[buffer_down] true: 1/arrival_rate;
+	[buffer_up] true: 1/arrival_rate;
 	//pm=0: 1;
-endrewards
+	endrewards
 
 //the expected number of listening cycles within C0 time units of operation
-rewards "total_listen"
+	
+	rewards "total_listen"
 	[countx] true: 1/rate_l2l;
 	//pm=1: 1;
-endrewards
-
+	endrewards
 
 //the expected number of active cycles within C0 time units of operation
-rewards "total_active"
+
+	rewards "total_active"
 	//pm=2: 1;
 	[arrive_down] true: 1/arrival_rate_down;
 	[arrive_up] true: 1/arrival_rate_up;
 	[received_by_ONU] true: 1/receive_rate_down;
 	[received_by_OLT] true: 1/receive_rate_up;
-endrewards
+	endrewards
 
 //the expected number of active cycles within C0 time units of operation
 
-rewards "total_buffer"
-	[buffer_down] true: 1/arrival_rate_down;
-endrewards
+	rewards "total_buffer"
+		[buffer_down] true: 1/arrival_rate_down;
+	endrewards
 
-rewards "total_arrival"
-	[arrive_down] true: 1/arrival_rate_down;
-	[arrive_up] true: 1/arrival_rate_up;
-	[buffer_down] true: 1/arrival_rate_down;
-	[buffer_up] true: 1/arrival_rate_up;
-endrewards
+	rewards "total_arrival"
+		[arrive_down] true: 1/arrival_rate_down;
+		[arrive_up] true: 1/arrival_rate_up;
+		[buffer_down] true: 1/arrival_rate_down;
+		[buffer_up] true: 1/arrival_rate_up;
+	endrewards
 
-rewards "total_receive"
-	[received_by_ONU] true: 1/receive_rate_down;
-	[received_by_OLT] true: 1/receive_rate_up;	
-endrewards
+	rewards "total_receive"
+		[received_by_ONU] true: 1/receive_rate_down;
+		[received_by_OLT] true: 1/receive_rate_up;	
+	endrewards
 
-rewards "total_trans"
-	[listening2sleep] true: 1/rate_l2s;
-	[sleep2listening] true: 1/rate_s2l;
-	[sleep2active] true: 1/rate_s2a;
-endrewards
+	rewards "total_trans"
+		[listening2sleep] true: 1/rate_l2s;
+		[sleep2listening] true: 1/rate_s2l;
+		[sleep2active] true: 1/rate_s2a;
+	endrewards
 
-rewards "energy_consumption"
-      pm=0 : 0.75;//1*50;
-      pm=1 : 1.28;//1*170;
-      pm=2 : 3.85;//1*750;
-endrewards
+	rewards "energy_consumption"
+      		pm=0 : 0.75;//1*50;
+      		pm=1 : 1.28;//1*170;
+      		pm=2 : 3.85;//1*750;
+	endrewards
 
-// count drop packets
-rewards "drops"
-	[drop_down] true : 1;
-endrewards
+	// count drop packets
+	rewards "drops"
+		[drop_down] true : 1;
+	endrewards
 </details>
 
 # Run the code
