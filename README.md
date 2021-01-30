@@ -28,6 +28,7 @@ A number of properties are implemented to the model to derive the quantitative r
 ### Model statistics: 
 
 The table below shows the statistics for the CTMC model which include: 
+* the number of transmitted packets in downstream or upstream;
 * the number of states and transitions in the CTMC representing the model;
 * the time needed to solve the model.
 
