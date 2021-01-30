@@ -36,7 +36,6 @@ A number of properties are implemented to the model to derive the quantitative r
 ### Model statistics: 
 
 ### The PRISM source code for non attack and attack case scenario: 
-```
 <details>
   <summary>
     summary
@@ -429,7 +428,6 @@ rewards "drops"
 endrewards
 </details>
 
-```
 # Run the code
  Steps :
          
