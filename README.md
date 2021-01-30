@@ -72,6 +72,8 @@ The user can right click on the plotted area to export the graph and right click
 
 ##### Sleep requests, ack messages and energy saving
 
+Similarly, the user can take the quantitative results for the number of sleep requests, ack messages and energy saving to calculate the percentage of sleep request acceptance and energy saving. 
+
 To calculate the number of sleep requests and ack messages, the user has to run the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
 
 For the non-attack scenario, open the models' file "DownUpStreams_Noattack.pm" and the properties' file "epon.pctl". Select the "Properties" tab and right click on the specific property R{“sleep”}=? [C≤C0] from the presented list. Select the choice "New experiment" to run the property. A new window opens where the models' constants have to be defined. Use the defined values of the following query: "Which is the expected number of sleep request messages sent by the OLT within 100 ms when 2000 packets are transmitted in both directions, downstream packet arrival rate varies from 0.2 x 10^2 to 1 x 10^2 packets/ms, upstream arrival rate is fixed at 0.7×10^2 and the service rate is 1? ". The constants of listening and sleep periods are set at 8ms and 20ms, respectively. The results can be calculated and simultaneously plotted in a graph by clicking the box of "Create Graph" at the same window in order to be examined easily by the user.
@@ -81,8 +83,6 @@ According to the aformentioned example, the user has to take the results that ar
 Correspondigly, the user can measure the energy saving by running experiments that are related to the query: " Which is the expected energy saving" for the property R{“energy saving”}=? [C≤C0] and using the values of the above example where 2000 packets are transmitted in both directions, downstream packet arrival rate varies from 0.2 x 10^2 to 1 x 10^2 packets/ms, upstream arrival rate is fixed at 0.7×10^2 and the service rate is 1 and listening and sleep periods are set at 8ms and 20ms, respectively. 
 
 For the attack case scenario open the prism software again and open the models' file "DownUpStreams_Attack.pm" to run the same experiments as described before, but taking care of the definition of the intervention rate value as the user did at proof-of-concept results. 
-
-Similarly, the user can take the results for the number of sleep requests, ack messages and energy saving. 
 
 # Contribution
 Anyone is welcome to use the source code. We welcome any contributions to the EPON-MITM attack model development through pull requests on GitHub.
