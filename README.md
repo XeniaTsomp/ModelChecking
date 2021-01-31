@@ -40,7 +40,6 @@ By way of example, the PRISM source code for the attack case scenario is present
   <summary>
    Attack Code
   </summary>
-```
 	
 // Ethernet Passive Optical Network - EPON
 
