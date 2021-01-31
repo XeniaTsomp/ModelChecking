@@ -36,33 +36,19 @@ The table below shows the statistics for the CTMC model which include:
 
 ### The PRISM source code: 
 By way of example, the PRISM source code for the attack case scenario is presented below. Expand the "Attack Code" arrow to observe the code.
-<details>
-  <summary>
-   Attack Code
-  </summary>
-	
-// Ethernet Passive Optical Network - EPON
-
-// OLT - Optical Line Terminal
-
-// ONU - Optical Network Unit
+```	
+// Ethernet Passive Optical Network - EPON,  OLT - Optical Line Terminal, ONU - Optical Network Unit
 
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
-
 // Implementation with queue as a module
 	
 	ctmc
 
 // Packet arrival rate lamda
-
 // SCALE *10^2
-
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
-
 // Model will finish when the OLT and the ONU send a number of transmitted_packets
-
 // scale *10^2
-
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
 
 	const int transmitted_packets_down;
@@ -74,12 +60,8 @@ By way of example, the PRISM source code for the attack case scenario is present
 	const int q_up_max=60;
 	const double arrival_rate_down;//ë_down
 	const double arrival_rate_up;//ë_up
-// Reveive rate of packets (mi = 1)
-
-// SCALE *10^2 --> 100 packets/msec
-
+// Reveive rate of packets (mi = 1). SCALE *10^2 --> 100 packets/msec 
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
-
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
 
 	const double receive_rate_down;
@@ -107,17 +89,12 @@ By way of example, the PRISM source code for the attack case scenario is present
 	
 	const int transmitted_packets_up;
 
-	// Formula finish represents the final state of the model
-	// Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
+	// Formula finish represents the final state of the model. Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
 	// and the ONU will have send transmitted packets and OLT will have received all packets
 
 	formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
 
-// The OLT has a queue/ONU where ONU's packets are arrived
-
-// With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
-
-// When an ONU sleeps, its downstream traffic is bufferd by the OLT and its upstream traffic is bufferd by the ONU. Then ONU turns to active mode and receives its packets.
+// The OLT has a queue/ONU where ONU's packets are arrived. With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped. When an //ONU sleeps, its downstream traffic is bufferd by the OLT and its upstream traffic is bufferd by the ONU. Then ONU turns to active mode and receives its packets.
 
 	module QUEUE_DOWN
 
@@ -141,11 +118,7 @@ By way of example, the PRISM source code for the attack case scenario is present
 
 	endmodule
 
-// The ONU has a queue where users' packets are arrived
-
-// With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped
-
-// When a ONU sleeps its upstream traffic is bufferd by the ONU and then packets dropped
+// The ONU has a queue where users' packets are arrived. With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped. When a ONU //sleeps its upstream traffic is bufferd by the ONU and then packets dropped
 
 	module QUEUE_UP
 
@@ -170,13 +143,7 @@ By way of example, the PRISM source code for the attack case scenario is present
 
 // OLT - Optical Line Terminal
 
-// Broadcasts the downstream traffic to all ONUs
-
-//Initially, ONU is in active power mode. Packets which arrive in OLT's queue and received by ONU.
-
-//Then the OLT sends sleep requests when there are no packets in its queue and ONU is in active mode.
-
-//After that, the OLT buffers the packets that arrive to its queue. 
+// Broadcasts the downstream traffic to all ONUs. Initially, ONU is in active power mode. Packets which arrive in OLT's queue and received by ONU. Then the OLT sends sleep //requests when there are no packets in its queue and ONU is in active mode. After that, the OLT buffers the packets that arrive to its queue. 
 
 	module OLT
 
@@ -240,20 +207,8 @@ By way of example, the PRISM source code for the attack case scenario is present
 
 // ONU - Optical Network Unit
 
-// Obtain downstream and upstream packets destined to itself
+// Obtain downstream and upstream packets destined to itself. The ONU has 3 power modes:listen, sleep and active. ONU replies to a sleep request with ack message when its queue //is empty, else replies with nack message. When ONU is in active mode, packets arrive to its queue and then received by OLT if no ack message sent to OLT. When ONU is in listen //mode, packets arrive to its queue, ONU turns to active mode and sends them to OLT, OLT receives packets and ONU turns to listen mode.  When ONU is in sleep mode, packets are //buffered in its queue. ONU turns to listen mode in ns, so the time that is spent is negible. 
 
-// The ONU has 3 power modes:listen, sleep and active
-
-//ONU replies to a sleep request with ack message when its queue is empty, else replies with nack message.
-
-//When ONU is in active mode, packets arrive to its queue and then received by OLT if no ack message sent to OLT.   
-
-//When ONU is in listen mode, packets arrive to its queue, ONU turns to active mode and sends them to OLT, OLT receives packets and ONU turns to 
-listen mode.   
-
-//When ONU is in sleep mode, packets are buffered in its queue.
-
-//ONU turns to listen mode in ns, so the time that is spent is negible.   
 module ONU
 
 	//ONU states 
@@ -371,9 +326,6 @@ module ONU
 	[present2not_present] ps=1 & q_down=0 & q_up=0 & packets_down=transmitted_packets_down & packets_up=transmitted_packets_up->(ps'=0);
 	endmodule
 
-//-----------------------------------------------------
-
-
 //----------------My rewards-------------------------//
 
 //calculate the expected number of sleep requests
@@ -487,7 +439,7 @@ module ONU
 	rewards "drops"
 		[drop_down] true : 1;
 	endrewards	
-</details>
+```
 
 
 # Run the code
