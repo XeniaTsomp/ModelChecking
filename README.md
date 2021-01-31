@@ -40,6 +40,7 @@ By way of example, the PRISM source code for the attack case scenario is present
   <summary>
    Attack Code
   </summary>
+```
 // Ethernet Passive Optical Network - EPON
 
 // OLT - Optical Line Terminal
@@ -484,7 +485,7 @@ module ONU
 	// count drop packets
 	rewards "drops"
 		[drop_down] true : 1;
-	endrewards
+	endrewards	
 </details>
 
 # Run the code
