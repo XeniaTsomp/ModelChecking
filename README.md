@@ -38,60 +38,45 @@ The table below shows the statistics for the CTMC model which include:
 By way of example, the PRISM source code for the attack case scenario is presented below. 
 ```	
 // Ethernet Passive Optical Network - EPON,  OLT - Optical Line Terminal, ONU - Optical Network Unit
-
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
 // Implementation with queue as a module
-	
 	ctmc
-
 // Packet arrival rate lamda
 // SCALE *10^2
 // we run for 0.01 - 1.01 --> 1 - 101 packets/msec
 // Model will finish when the OLT and the ONU send a number of transmitted_packets
 // scale *10^2
 // we run for 100 - 1000 --> 10.000 - 100.000 packets
-
 	const int transmitted_packets_down;
 // Maximum OLT queue size
-
 	const int q_down_max=60;
 // Maximum ONU queue size
-
 	const int q_up_max=60;
 	const double arrival_rate_down;//ë_down
 	const double arrival_rate_up;//ë_up
 // Reveive rate of packets (mi = 1). SCALE *10^2 --> 100 packets/msec 
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
-
 	const double receive_rate_down;
 	const double receive_rate_up;
-
 //constants for cycles 
-	
 	const int y=1;
 	const int x=1;
-
 //Tsleep and Tlisten
-
 	const double sleep_time_cycle; // 20 msec
 	const double listening_time_cycle; //8 msec
 // TRansition rates
-
 	const double rate_s2l = 1/2 ;		// msec
 	const double rate_s2s = 1/sleep_time_cycle; // msec
 	const double rate_l2l = 1/listening_time_cycle; // msec
 	const double rate_l2s = pow(10,3)/2.88 ; // microsec
 	const double rate_s2a = 1/2 ;		// msec
 	const double rfk;//intervention rate of fake OLT
-
 //ONU upstream
-	
 	const int transmitted_packets_up;
 
 	// Formula finish represents the final state of the model. Model will finish when the OLT will have send transmitted_packets and ONU will have received all packets
 	// and the ONU will have send transmitted packets and OLT will have received all packets
-
 	formula finish = ((q_down=0) & (q_up=0) & (packets_down = transmitted_packets_down) & (packets_up=transmitted_packets_up));
 
 // The OLT has a queue/ONU where ONU's packets are arrived. With the increase of packet arrival rate queue size increases and then (queue becomes full) packets dropped. When an //ONU sleeps, its downstream traffic is bufferd by the OLT and its upstream traffic is bufferd by the ONU. Then ONU turns to active mode and receives its packets.
@@ -249,7 +234,6 @@ module ONU
 	//then, ONU turns to state s=1 which depicts that a message has been sent.
 	[nack_sent_by_ONU](pm=2) & (r=2) & (s=0) & (q_up>0) &(m=0) -> (s'=1) & (pm'=pm);
 
-
 //packets' transmission-reception
 
 	// a packet arrives in active power mode 
@@ -313,8 +297,7 @@ module ONU
 	//0:not send message, 1:send message
 	m:[0..1]init 0;
 //Attack	
-	
-	//OLT sents sleep request 
+		//OLT sents sleep request 
 	[sleep_request] ps=1 & r=0 & s=0 ->(m'=0)& (ps'=ps);
 	//Attacker receives request
 	[request_received_by_attacker] ps=1 & r=1 & s=0 & m=0 ->rfk:(m'=1)&(ps'=ps); 
@@ -349,8 +332,6 @@ module ONU
 	rewards "queue_size_up"
 		true : q_up;
 	endrewards
-
-// Reward structures
 
 //the expected size of queue within C0 time units of operation
 
@@ -440,8 +421,6 @@ module ONU
 		[drop_down] true : 1;
 	endrewards	
 ```
-
-
 # Run the code
  Steps :
          
