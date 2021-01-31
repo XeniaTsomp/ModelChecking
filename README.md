@@ -41,9 +41,11 @@ By way of example, the PRISM source code for the attack case scenario is present
    Attack Code
   </summary>
 	
-> Ethernet Passive Optical Network - EPON
-> OLT - Optical Line Terminal
-> ONU - Optical Network Unit
+// Ethernet Passive Optical Network - EPON
+
+// OLT - Optical Line Terminal
+
+// ONU - Optical Network Unit
 
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
 
