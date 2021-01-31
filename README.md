@@ -430,7 +430,7 @@ module ONU
          
          3. Open the properties file
          
-         4. Run the expiriments
+         4. Run the experiments
 
 ### 1. Prism model checker Installation
 PRISM is a free and open source software. You can download the tool for free from the following link https://www.prismmodelchecker.org/download.php. 
