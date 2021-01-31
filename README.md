@@ -530,7 +530,7 @@ The user can right click on the plotted area to export the graph and right click
 
 ##### Sleep requests, ack messages and energy saving
 
-Similarly, the user can take the quantitative results for the number of sleep requests, ack messages, and energy-saving to calculate and take the graphs of the percentage of sleep request acceptance and energy saving. 
+Similarly, the user can take the quantitative results for the number of sleep requests, ack messages, and energy-saving to calculate and plot the graphs of the percentage of sleep request acceptance and energy saving. 
 
 To calculate the number of sleep requests and ack messages, the user has to run the properties of R{“sleep”}=? [C≤C0] and R{“ack”}=? [C≤C0]. 
 
