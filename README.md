@@ -52,8 +52,8 @@ By way of example, the PRISM source code for the attack case scenario, which con
 	const int q_down_max=60;
 // Maximum ONU queue size
 	const int q_up_max=60;
-	const double arrival_rate_down;//ë_down
-	const double arrival_rate_up;//ë_up
+	const double arrival_rate_down;//l_down
+	const double arrival_rate_up;//l_up
 // Reveive rate of packets (mi = 1). SCALE *10^2 --> 100 packets/msec 
 // =C/L, 1.25 Gbps / 1518 bytes = 1.25*10^9 / 8*1518*10^3 packets/msec
 // =12.5*10^5 / 12*10^3 = 100 packets/msec
