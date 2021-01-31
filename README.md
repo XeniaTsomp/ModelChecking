@@ -36,6 +36,7 @@ The table below shows the statistics for the CTMC model which include:
 
 ### The PRISM source code: 
 By way of example, the PRISM source code for the attack case scenario is presented below. Expand the "Attack Code" arrow to observe the code.
+```
 <details>
   <summary>
    Attack Code
@@ -486,7 +487,7 @@ module ONU
 		[drop_down] true : 1;
 	endrewards
 </details>
-
+```
 # Run the code
  Steps :
          
