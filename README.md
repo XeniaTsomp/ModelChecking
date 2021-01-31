@@ -35,7 +35,7 @@ The table below shows the statistics for the CTMC model which include:
 <img src="images/table.png" width=700>
 
 ### The PRISM source code: 
-By way of example, the PRISM source code for the attack case scenario is presented below. Expand the "Attack Code" arrow to observe the code.
+By way of example, the PRISM source code for the attack case scenario is presented below. 
 ```	
 // Ethernet Passive Optical Network - EPON,  OLT - Optical Line Terminal, ONU - Optical Network Unit
 
