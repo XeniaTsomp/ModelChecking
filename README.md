@@ -517,7 +517,7 @@ To take the quantitative results of the non-attack case scenario open the models
 
 <img src="images/down.png" width=350> 
 
-The plotted graph is shon as follows.
+The plotted graph is shown as follows.
 
 <img src="images/noattack.png" width=480>
 
