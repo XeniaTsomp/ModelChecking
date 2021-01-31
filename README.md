@@ -50,8 +50,7 @@ By way of example, the PRISM source code for the attack case scenario is present
 // Modeling a sleep control scheme which aims at reducing ONUs' energy consumption and a sleep mode scheduling technique
 
 // Implementation with queue as a module
-
-	ctmc
+ctmc
 // Packet arrival rate lamda
 
 // SCALE *10^2
